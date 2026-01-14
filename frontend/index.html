@@ -1,2 +1,21 @@
-<input placeholder="Enter amount">
-<button>Add Expense</button>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Expense Tracker</h1>
+
+<input id="amount" placeholder="Amount">
+<input id="category" placeholder="Category">
+<button id="btn">Add Expense</button>
+
+<script>
+    document.getElementById("btn").onclick = function() {
+        let amt = document.getElementById("amount").value;
+        let cat = document.getElementById("category").value;
+
+        console.log(amount, cat);
+    };
+</script>
+
+</body>
+</html>

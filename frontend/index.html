@@ -7,14 +7,34 @@
 <input id="amount" placeholder="Amount">
 <input id="category" placeholder="Category">
 <button id="btn">Add Expense</button>
-
+<ul id="expenseList"></ul>
 <script>
-    document.getElementById("btn").onclick = function() {
-        let amt = document.getElementById("amount").value;
-        let cat = document.getElementById("category").value;
+    let expenses = [];
+    document.getElementById("btn").onclick = function () {
+    let amt = document.getElementById("amount").value;
+    let cat = document.getElementById("category").value;
 
-        console.log(amount, cat);
+    if (amt === "" || cat === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    let expense = {
+        amount: amt,
+        category: cat
     };
+
+    expenses.push(expense);
+
+    let list = document.getElementById("expenseList");
+    let item = document.createElement("li");
+    item.innerText = amt + " - " + cat;
+
+    list.appendChild(item);
+
+    document.getElementById("amount").value = "";
+    document.getElementById("category").value = "";
+};
 </script>
 
 </body>
